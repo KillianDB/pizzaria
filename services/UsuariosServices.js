@@ -9,8 +9,28 @@ function salvar(usuarios){
     fs.writeFileSync("./databases/usuarios.json", JSON.stringify(usuarios))
 }
 
-function cadastrar(objeto){
-// Seu código aqui
+function cadastrar({}){
+    usuarios.indexOf({
+        id: 22,
+        nome: "Nome do Usuário",
+        email: "email@dousuario.com",
+        senha: "$2b$10$/DyrZvGhcHHQ4PgSKgDhtexKiNTl3QKnYpLPI.pl1gv4VFtQHFvKy",
+        enderecos: ["Rua dos usuários, nº 256. Usuariolândia-BA"],
+        formasDePagamento: []
+    }
+);
+if(usuarios.indexOf = -1){
+}else{
+    usuarios.push({
+        id: 22,
+        nome: "Nome do Usuário",
+        email: "email@dousuario.com",
+        senha: "$2b$10$/DyrZvGhcHHQ4PgSKgDhtexKiNTl3QKnYpLPI.pl1gv4VFtQHFvKy",
+        enderecos: ["Rua dos usuários, nº 256. Usuariolândia-BA"],
+        formasDePagamento: []
+    }
+)
+}
 }
 
 function detalhar(idUsuario){
