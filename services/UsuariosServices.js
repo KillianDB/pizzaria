@@ -4,8 +4,9 @@ function listar(){
     console.table(usuarios, ['id' , 'nome' , 'email'])
 }
 
-function salvar(arrayDeUsuarios){
-    // Seu código aqui
+function salvar(usuarios){
+    const fs = require("fs");
+    fs.writeFileSync("./databases/usuarios.json", JSON.stringify(usuarios))
 }
 
 function cadastrar(objeto){
