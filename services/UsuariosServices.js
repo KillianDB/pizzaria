@@ -45,8 +45,9 @@ function alterar(novosDados, idUsuario){
     // Seu código aqui
 }
 
-function addEndereco(novoEndereco, idUsuario){
-    // Seu código aqui
+function addEndereco(novoEndereco = "Rua A", id = 2){
+    var idUsuario = (usuarios.find(x => x.id === 2));
+    idUsuario.enderecos.push(novoEndereco)
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
