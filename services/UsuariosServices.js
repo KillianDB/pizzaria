@@ -87,9 +87,14 @@ function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuarioRemoverPaga
     salvar(usuarios)
 }
 
-function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
-    // Seu código aqui
+function alterarFormaDePagamento(posicaoDaFormaDePagamento,novaFormaDePagamento = "5678", idUsuarioAlterarPagamento){
+    var posicaoDaFormaDePagamento = (usuarios.find(x => x.formasDePagamento == 1));
+    {
+        idUsuarioAlterarPagamento.formasDePagamento = novaFormaDePagamento.formasDePagamento;       
 }
+salvar(usuarios)
+}
+
 
 const UsuariosServices = {
     cadastrar,
