@@ -45,9 +45,9 @@ function alterar(novosDados, idUsuario){
     // Seu código aqui
 }
 
-function addEndereco(novoEndereco = "Rua A", id = 2){
+function addEndereco(novoEndereco = "Rua A", idUsuario){
     var idUsuario = (usuarios.find(x => x.id === 2));
-    idUsuario.enderecos.push(novoEndereco)
+    idUsuarios.enderecos.push(novoEndereco)
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
@@ -58,13 +58,15 @@ function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
 // Seu código aqui        
 }
 
-function addFormaDePagamento(novaFormaDePagamento = "000", id = 2){
+function addFormaDePagamento(novaFormaDePagamento = "000", idUsuario){
     var idUsuario = (usuarios.find(x => x.id === 2));
-    idUsuario.formasDePagamento.push(novaFormaDePagamento)
+    idUsuarios.formasDePagamento.push(novaFormaDePagamento)
 }
 
 function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
-    // Seu código aqui
+    var idUsuario = (usuarios.find(x => x.id === 2));
+    var posicaoDaFormaDePagamento = (usuarios.find(x => x.formasDePagamento == 1))
+    idUsuarios.formasDePagamento.delete(posicaoDaFormaDePagamento)
 }
 
 function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
