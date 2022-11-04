@@ -51,8 +51,11 @@ function addEndereco(novoEndereco = "Rua A", idUsuario){
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
-// Seu código aqui
+    var idUsuario = (usuarios.find(x => x.id === 2));
+    var posicaoDoEndereco = (usuarios.find(x => x.enderecos == 1))
+    idUsuarios.enderecos.delete(posicaoDoEndereco)
 }
+
 
 function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
 // Seu código aqui        
