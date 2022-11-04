@@ -31,12 +31,12 @@ if(usuarios.indexOf = -1){
 }
 }
 
-function detalhar(idUsuario){
-    var idUsuario = (usuarios.find(x => x.id === 2));
-    console.log("Nome: " + idUsuario.nome);
-    console.log("Email: " + idUsuario.email);
-    console.table(idUsuario.enderecos);
-    console.table(idUsuario.formasDePagamento)
+function detalhar(idUsuarioDetalhar){
+    var idUsuarioDetalhar = (usuarios.find(x => x.id === 2));
+    console.log("Nome: " + idUsuarioDetalhar.nome);
+    console.log("Email: " + idUsuarioDetalhar.email);
+    console.table(idUsuarioDetalhar.enderecos);
+    console.table(idUsuarioDetalhar.formasDePagamento)
 }
 
 function remover(idDoUsuarioParaRemover){
@@ -45,19 +45,20 @@ function remover(idDoUsuarioParaRemover){
 }
 
 
-function alterar(novosDados, idUsuario){
+function alterar(novosDados, idUsuarioAlterar){
     // Seu código aqui
 }
 
-function addEndereco(novoEndereco = "Rua A", idUsuario){
-    var idUsuario = (usuarios.find(x => x.id === 2));
-    idUsuarios.enderecos.push(novoEndereco)
+function addEndereco(novoEndereco = "Rua A", idUsuarioAdd){
+    var idUsuarioAdd = (usuarios.find(x => x.id === 2));
+    idUsuarioAdd.enderecos.push(novoEndereco)
+    salvar(usuarios)
 }
 
-function removerEndereco(posicaoDoEndereco, idUsuario){
-    var idUsuario = (usuarios.find(x => x.id === 2));
+function removerEndereco(posicaoDoEndereco, idUsuarioRemover){
+    var idUsuarioRemover = (usuarios.find(x => x.id === 2));
     var posicaoDoEndereco = (usuarios.find(x => x.enderecos == 1))
-    idUsuarios.enderecos.delete(posicaoDoEndereco)
+    idUsuarioRemover.enderecos.delete(posicaoDoEndereco)
 }
 
 
@@ -65,15 +66,16 @@ function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
 // Seu código aqui        
 }
 
-function addFormaDePagamento(novaFormaDePagamento = "000", idUsuario){
-    var idUsuario = (usuarios.find(x => x.id === 2));
-    idUsuarios.formasDePagamento.push(novaFormaDePagamento)
+function addFormaDePagamento(novaFormaDePagamento = "000", idUsuarioAddPagamento){
+    var idUsuarioAddPagamento = (usuarios.find(x => x.id === 2));
+    idUsuarioAddPagamento.formasDePagamento.push(novaFormaDePagamento)
+    salvar(usuarios)
 }
 
-function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
-    var idUsuario = (usuarios.find(x => x.id === 2));
+function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuarioRemoverPagamento){
+    var idUsuarioRemoverPagamento = (usuarios.find(x => x.id === 2));
     var posicaoDaFormaDePagamento = (usuarios.find(x => x.formasDePagamento == 1))
-    idUsuarios.formasDePagamento.delete(posicaoDaFormaDePagamento)
+    idUsuarioRemoverPagamento.formasDePagamento.delete(posicaoDaFormaDePagamento)
 }
 
 function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
