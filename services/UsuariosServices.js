@@ -1,4 +1,4 @@
-var usuarios = require("./databases/usuarios.json");
+var usuarios = require("../databases/usuarios.json");
 
 function listar(){
     console.table(usuarios, ['id' , 'nome' , 'email'])
@@ -9,16 +9,14 @@ function salvar(usuarios){
     fs.writeFileSync("./databases/usuarios.json", JSON.stringify(usuarios))
 }
 
-function cadastrar({}){
-    usuarios.indexOf({
-        id: 22,
+function cadastrar({novoUsuario}){
+    var novoUsuario = {id: 22,
         nome: "Nome do Usuário",
         email: "email@dousuario.com",
         senha: "$2b$10$/DyrZvGhcHHQ4PgSKgDhtexKiNTl3QKnYpLPI.pl1gv4VFtQHFvKy",
         enderecos: ["Rua dos usuários, nº 256. Usuariolândia-BA"],
-        formasDePagamento: []
-    }
-);
+        formasDePagamento: []}
+    usuarios.indexOf(novoUsuario);
 if(usuarios.indexOf = -1){
 }else{
     usuarios.push({
@@ -34,7 +32,11 @@ if(usuarios.indexOf = -1){
 }
 
 function detalhar(idUsuario){
-// Seu código aqui
+    var idUsuario = (usuarios.find(x => x.id === 2));
+    console.log("Nome: " + idUsuario.nome);
+    console.log("Email: " + idUsuario.email);
+    console.table(idUsuario.enderecos);
+    console.table(idUsuario.formasDePagamento)
 }
 
 function remover(idDoUsuarioParaRemover){
