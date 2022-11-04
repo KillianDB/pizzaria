@@ -6,10 +6,10 @@ function listar(){
 
 function salvar(usuarios){
     const fs = require("fs");
-    fs.writeFileSync("./databases/usuarios.json", JSON.stringify(usuarios))
+    fs.writeFileSync("./databases/usuarios.json", JSON.stringify(usuarios,null,4))
 }
 
-function cadastrar({novoUsuario}){
+function cadastrar(novoUsuario){
     var novoUsuario = {id: 22,
         nome: "Nome do Usuário",
         email: "email@dousuario.com",
@@ -17,18 +17,12 @@ function cadastrar({novoUsuario}){
         enderecos: ["Rua dos usuários, nº 256. Usuariolândia-BA"],
         formasDePagamento: []}
     usuarios.indexOf(novoUsuario);
-if(usuarios.indexOf = -1){
+if(usuarios.indexOf != undefined){
+    usuarios.push(novoUsuario)
 }else{
-    usuarios.push({
-        id: 22,
-        nome: "Nome do Usuário",
-        email: "email@dousuario.com",
-        senha: "$2b$10$/DyrZvGhcHHQ4PgSKgDhtexKiNTl3QKnYpLPI.pl1gv4VFtQHFvKy",
-        enderecos: ["Rua dos usuários, nº 256. Usuariolândia-BA"],
-        formasDePagamento: []
-    }
-)
+    
 }
+salvar(usuarios)
 }
 
 function detalhar(idUsuarioDetalhar){
@@ -41,12 +35,20 @@ function detalhar(idUsuarioDetalhar){
 
 function remover(idDoUsuarioParaRemover){
     var idUsuarioParaRemover = (usuarios.find(x => x.id === 2));
-    usuarios.idDoUsuarioParaRemover.delete(idUsuarioParaRemover)
+    delete usuarios.idDoUsuarioParaRemover;
+    salvar(usuarios)
 }
 
 
 function alterar(novosDados, idUsuarioAlterar){
-    // Seu código aqui
+    var senhaCriptografada = bcrypt.hashSync(novosDados.senha, 10);
+    var idUsuarioAlterar = usuarios.findIndex(usuarios => usuarios.id == idUsuarioAlterar)
+    {
+        idUsuarioAlterar.nome = novosDados.nome;
+        idUsuarioAlterar.email = novosDados.email;
+        idUsuarioAlterar.senha = senhaCriptografada;
+    }
+    salvar(usuarios)
 }
 
 function addEndereco(novoEndereco = "Rua A", idUsuarioAdd){
@@ -57,8 +59,9 @@ function addEndereco(novoEndereco = "Rua A", idUsuarioAdd){
 
 function removerEndereco(posicaoDoEndereco, idUsuarioRemover){
     var idUsuarioRemover = (usuarios.find(x => x.id === 2));
-    var posicaoDoEndereco = (usuarios.find(x => x.enderecos == 1))
-    idUsuarioRemover.enderecos.delete(posicaoDoEndereco)
+    var posicaoDoEndereco = (usuarios.find(x => x.enderecos == 1));
+    delete idUsuarioRemover.enderecos;
+    salvar(usuarios)
 }
 
 
@@ -68,14 +71,15 @@ function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
 
 function addFormaDePagamento(novaFormaDePagamento = "000", idUsuarioAddPagamento){
     var idUsuarioAddPagamento = (usuarios.find(x => x.id === 2));
-    idUsuarioAddPagamento.formasDePagamento.push(novaFormaDePagamento)
+    idUsuarioAddPagamento.formasDePagamento.push(novaFormaDePagamento);
     salvar(usuarios)
 }
 
 function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuarioRemoverPagamento){
     var idUsuarioRemoverPagamento = (usuarios.find(x => x.id === 2));
-    var posicaoDaFormaDePagamento = (usuarios.find(x => x.formasDePagamento == 1))
-    idUsuarioRemoverPagamento.formasDePagamento.delete(posicaoDaFormaDePagamento)
+    var posicaoDaFormaDePagamento = (usuarios.find(x => x.formasDePagamento == 1));
+    delete idUsuarioRemoverPagamento.formasDePagamento;
+    salvar(usuarios)
 }
 
 function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){

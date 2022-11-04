@@ -1,3 +1,3 @@
 const UsuariosServices = require("./services/UsuariosServices.js");
 
-UsuariosServices.addFormaDePagamento();
+UsuariosServices.remover();
