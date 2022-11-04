@@ -38,8 +38,10 @@ function detalhar(idUsuario){
 }
 
 function remover(idDoUsuarioParaRemover){
-    // Seu código aqui
+    var idUsuarioParaRemover = (usuarios.find(x => x.id === 2));
+    usuarios.idDoUsuarioParaRemover.delete(idUsuarioParaRemover)
 }
+
 
 function alterar(novosDados, idUsuario){
     // Seu código aqui
